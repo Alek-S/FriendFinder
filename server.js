@@ -1,13 +1,13 @@
 'use strict';
 
 // ==Modules==
-const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
+const express = require('express');
+const bodyParser = require('body-parser');
+
 
 //===Routes===
-const api = require('/app/routing/apiRoutes.js');
-const api = require('/app/routing/htmlRoutes.js');
+const api = require('./app/routing/apiRoutes');
+const page = require('./app/routing/htmlRoutes');
 
 // ==Express Setup==
 const app = express();
@@ -17,14 +17,18 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //Start Server
 app.listen(PORT, function() {
-	console.log("App listening on PORT " + PORT);
+	console.log('App listening on PORT ' + PORT);
 });
 
 //===Static Files, CSS,Images,Fonts===
 app.use(express.static('app/public'));
 
-//===Routes===
+
+//==Routing==
+app.get('/survey', page.survey);
+app.use('/', page.root);
+
