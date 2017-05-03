@@ -1,12 +1,13 @@
 'use strict';
 const path = require('path');
 
+module.exports = function(app){
 
-module.exports.root = function(req, res) {
-	res.sendFile(path.join(__dirname, '../public/home.html'));
-};
+	app.get('/', function(req, res) {
+		res.sendFile(path.join(__dirname, '../public/home.html'));
+	});
 
-
-module.exports.survey = function(req, res) {
-	res.sendFile(path.join(__dirname, '../public/survey.html'));
+	app.use('/survey', function(req, res) {
+		res.sendFile(path.join(__dirname, '../public/survey.html'));
+	});
 };
