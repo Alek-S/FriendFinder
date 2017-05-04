@@ -60,7 +60,7 @@
 
         <div class="panel-body">
             <h4>You often get so lost in thoughts that you ignore or forget your surroundings.</h4>
-            <select data-placeholder="" class="chosen-select" id="1">
+            <select data-placeholder="" id="1" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -78,7 +78,7 @@
 
         <div class="panel-body">
             <h4>You try to respond to your e-mails as soon as possible and cannot stand a messy inbox.</h4>
-            <select data-placeholder="" class="chosen-select" id="2">
+            <select data-placeholder="" id="2" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -96,7 +96,7 @@
 
         <div class="panel-body">
             <h4>You rarely do something just out of sheer curiosity.</h4>
-            <select data-placeholder="" class="chosen-select" id="3">
+            <select data-placeholder="" id="3" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -114,7 +114,7 @@
 
         <div class="panel-body">
             <h4>You are usually highly motivated and energetic.</h4>
-            <select data-placeholder="" class="chosen-select" id="4">
+            <select data-placeholder="" id="4" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -132,7 +132,7 @@
 
         <div class="panel-body">
             <h4>Winning a debate matters less to you than making sure no one gets upset.</h4>
-            <select data-placeholder="" class="chosen-select" id="5">
+            <select data-placeholder="" id="5" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -150,7 +150,7 @@
 
         <div class="panel-body">
             <h4>Your home and work environments are quite tidy.</h4>
-            <select data-placeholder="" class="chosen-select" id="6">
+            <select data-placeholder="" id="6" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -168,7 +168,7 @@
 
         <div class="panel-body">
             <h4>You do not mind being at the center of attention.</h4>
-            <select data-placeholder="" class="chosen-select" id="7">
+            <select data-placeholder="" id="7" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -186,7 +186,7 @@
 
         <div class="panel-body">
             <h4>You consider yourself more practical than creative.</h4>
-            <select data-placeholder="" class="chosen-select" id="8">
+            <select data-placeholder="" id="8" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -204,7 +204,7 @@
 
         <div class="panel-body">
             <h4>Your travel plans are usually well thought out.</h4>
-            <select data-placeholder="" class="chosen-select" id="9">
+            <select data-placeholder="" id="9" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -222,7 +222,7 @@
 
         <div class="panel-body">
             <h4>You often find yourself lost in thought when you are walking in nature.</h4>
-            <select data-placeholder="" class="chosen-select" id="10">
+            <select data-placeholder="" id="10" required>
                 <option value=""></option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -271,7 +271,30 @@
 
       </div>
     </div>
-    
+
+<script type="text/javascript">
+    $('#submit').on('click', function(){
+        event.preventDefault();
+        var answers = [];
+        var data ={
+            name: $('#name').val(),
+            photo: $('#photo').val(),
+            result: answers
+        };
+
+        for(var i=0; i<10; i++){
+            var val = $('#'+ (i+1) ).val();
+            answers.push(val);
+        }
+        console.log(answers);
+
+        $.ajax(window.location.origin + '/api/friends', {
+            data : JSON.stringify(data),
+            contentType : 'application/json',
+            type : 'POST'
+        });
+    });
+</script>    
 
 </body>
 
