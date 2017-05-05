@@ -9,7 +9,9 @@ const app = express();
 const PORT = 3000;
 
 //===Routes===
+//api
 require('./app/routing/apiRoutes')(app);
+//html
 require('./app/routing/htmlRoutes')(app);
 
 //Start Server

@@ -288,6 +288,7 @@
         }
         console.log(answers);
 
+        //post the info
         $.ajax(window.location.origin + '/api/friends', {
             data : JSON.stringify(data),
             contentType : 'application/json',
