@@ -24,14 +24,17 @@ module.exports = function(app){
 
 	app.get('/api/friends', function(req, res) {
 		console.log('\n' + chalk.bgMagenta('Request [GET] => /api/friends') );
-		console.log(chalk.bgBlue('Response [GET] => /api/friends') + ':\n' , friendList);
+		console.log(chalk.bgBlue('Response [GET] <= /api/friends') + ':\n' , friendList);
+
 		return res.json(friendList);
 	});
 
 	app.post('/api/friends', jsonParser,  function(req, res) {
 		console.log('\n' + chalk.bgMagenta('Request [POST] => /api/friends') + ':\n' , req.body);
 		friendList.push(req.body);
-		console.log(chalk.cyan('Full Friend List:'), friendList);
+
+		console.log(chalk.bgBlue('Response [POST] <= /api/friends') + ':\n' , matchLatest());
+		res.send( matchLatest() );
 	});
 };
 

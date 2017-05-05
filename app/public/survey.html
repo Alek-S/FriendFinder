@@ -293,6 +293,8 @@
             data : JSON.stringify(data),
             contentType : 'application/json',
             type : 'POST'
+        }).done(function(res){
+            console.log(res);
         });
 
         //get best match
