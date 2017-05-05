@@ -3,10 +3,11 @@ const bodyParser = require('body-parser');
 const chalk = require('chalk');
 const _ = require('lodash');
 
-// create application/x-www-form-urlencoded parser
+
 // const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const jsonParser = bodyParser.json();
 
+//friendList with placeholder friends
 let friendList = [
 	{ name: 'Bob',
 		photo: 'https://yt3.ggpht.com/-uJh4oSQAwak/AAAAAAAAAAI/AAAAAAAAAAA/AMGKfKvDP3w/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
@@ -22,15 +23,15 @@ let friendList = [
 module.exports = function(app){
 
 	app.get('/api/friends', function(req, res) {
-		console.log('\n' + chalk.bgMagenta('[GET] => /api/friends') + ':\n' + req.body);
-		matchLatest();
+		console.log('\n' + chalk.bgMagenta('Request [GET] => /api/friends') );
+		console.log(chalk.bgBlue('Response [GET] => /api/friends') + ':\n' , friendList);
+		return res.json(friendList);
 	});
 
 	app.post('/api/friends', jsonParser,  function(req, res) {
-		console.log('\n' + chalk.bgMagenta('[POST] => /api/friends') + ':\n' , req.body);
+		console.log('\n' + chalk.bgMagenta('Request [POST] => /api/friends') + ':\n' , req.body);
 		friendList.push(req.body);
-		console.log('Full Friend List:', friendList);
-		console.log('Best Match:',matchLatest());
+		console.log(chalk.cyan('Full Friend List:'), friendList);
 	});
 };
 
