@@ -10,13 +10,13 @@ const jsonParser = bodyParser.json();
 //friendList with placeholder friends
 let friendList = [
 	{ name: 'Bob',
-		photo: 'https://yt3.ggpht.com/-uJh4oSQAwak/AAAAAAAAAAI/AAAAAAAAAAA/AMGKfKvDP3w/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+		photo: 'https://pbs.twimg.com/profile_images/659846506678124544/qptu8mfw.jpg',
 		result: [ '1', '4', '2', '4', '2', '3', '2', '4', '2', '3' ] },
 	{ name: 'Susan',
-		photo: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4ODMzMDUzNF5BMl5BanBnXkFtZTcwNzY4NzQwMw@@._V1_UY317_CR6,0,214,317_AL_.jpg',
+		photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Susan_Junket_%28cropped%29.jpg/355px-Susan_Junket_%28cropped%29.jpg',
 		result: [ '4', '4', '2', '3', '4', '3', '2', '4', '3', '1' ] },
 	{ name: 'Albert',
-		photo: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg',
+		photo: 'https://media1.britannica.com/eb-media/19/80619-004-9B9D0D26.jpg',
 		result: [ '3', '1', '4', '1', '2', '1', '4', '5', '5', '5' ] }
 ];
 
