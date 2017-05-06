@@ -3,7 +3,7 @@ Answer a few basic questions. Then find the friend with the greatest compatibili
 
 #### Try It Now: [Page Link](https://alek-friendfinder.herokuapp.com/)
 
-## Technology Used
+#### Technology Used
 * Node.js
 * Express
 * Lodash
