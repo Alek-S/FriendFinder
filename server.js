@@ -6,7 +6,6 @@ const express = require('express');
 
 // ==Express Setup==
 const app = express();
-// const PORT = 3000;
 app.set('port', (process.env.PORT || 5000));
 
 //===Routes===
