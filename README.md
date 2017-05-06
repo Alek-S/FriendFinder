@@ -1,12 +1,12 @@
 # FriendFinder
 Answer a few basic questions. Then find the friend with the greatest compatibility!
 
+#### Try It Now: [Page Link](https://alek-friendfinder.herokuapp.com/)
+
 ## Technology Used
-* ES6
 * Node.js
 * Express
 * Lodash
-* body-parser
 * Bootstrap
 * jQuery
 * Heroku
@@ -15,5 +15,5 @@ Answer a few basic questions. Then find the friend with the greatest compatibili
 ![node](./screenshots/node.gif)
 
 ## Front
-Try It Now: [Page Link](https://alek-friendfinder.herokuapp.com/)
+![survey](./screenshots/front.gif)
 
