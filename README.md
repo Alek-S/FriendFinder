@@ -1,5 +1,5 @@
 # FriendFinder
-Answer a few basic questions. Then find the friend with the greatest compatibility!
+Answer a few questions. Find a friend with the greatest compatibility.
 
 #### Try It Now: [Page Link](https://alek-friendfinder.herokuapp.com/)
 
