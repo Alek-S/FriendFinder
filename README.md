@@ -1,7 +1,7 @@
 # FriendFinder
 Answer a few questions. Find a friend with the greatest compatibility.
 
-#### Try It Now: [Page Link](https://alek-burger.herokuapp.com/)
+#### Try It Now: [Page Link](https://alek-friendfinder.herokuapp.com/)
 
 #### Technology Used
 * Node.js
